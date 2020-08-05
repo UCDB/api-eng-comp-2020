@@ -1,17 +1,12 @@
-import cors from "cors";
-import express from "express";
-import * as dotenv from "dotenv";
-import mongoose from "mongoose";
-import helmet from "helmet";
+import express from 'express';
+import mongoose from 'mongoose';
+import helmet from 'helmet';
+import cors from 'cors';
+import * as dotenv from 'dotenv';
 
 dotenv.config();
-console.log(process.env.PORT);
-if (!process.env.PORT) {
-  console.log(`Error to get ports`);
-  process.exit(1);
-}
 
-const PORT: number = parseInt(process.env.PORT as string, 10);
+const PORT : number = parseInt(process.env.PORT as string, 10) || 3333;
 
 const app = express();
 
@@ -19,9 +14,10 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-const server = app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
-});
+app.listen(PORT, () => {
+    console.log(`API Listening on port ${PORT}`);
+})
 
-// Send message for default URL
-app.get("/", (req, res) => res.send("Welcome to NodeJs App using TypeScript"));
+app.get('/', (req, res) => {
+    res.send('Welcome to NodeJs App using TypeScript');
+})
