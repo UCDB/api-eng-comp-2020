@@ -3,7 +3,6 @@ import mongoose from 'mongoose';
 import helmet from 'helmet';
 import cors from 'cors';
 import * as dotenv from 'dotenv';
-import { allowedNodeEnvironmentFlags } from 'process';
 
 dotenv.config();
 
@@ -16,9 +15,9 @@ app.use(cors());
 app.use(express.json());
 
 app.listen(PORT, () => {
-    console.log(`API Started at port ${PORT}`);
+    console.log(`API Listening on port ${PORT}`);
 })
 
 app.get('/', (req, res) => {
-    res.send('Hello world');
+    res.send('Welcome to NodeJs App using TypeScript');
 })
