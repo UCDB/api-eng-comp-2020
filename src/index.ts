@@ -19,5 +19,5 @@ app.listen(PORT, () => {
 })
 
 app.get('/', (req, res) => {
-    res.send('Welcome to NodeJs App using TypeScript');
+    res.send('Welcome to NodeJs App using TypeScript and Nodemon');
 })

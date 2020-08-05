@@ -1,0 +1,8 @@
+{
+    "watch": ["src/"],
+    "ext": "ts,js",
+    "execMap": {
+        "ts": "npm run build && npm run start",
+        "js": "npm run build && npm run start"
+    }
+}
