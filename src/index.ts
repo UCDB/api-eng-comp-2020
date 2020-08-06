@@ -15,9 +15,10 @@ app.use(cors());
 app.use(express.json());
 
 app.listen(PORT, () => {
-    console.log(`API Listening on port ${PORT}`);
-})
+  // eslint-disable-next-line no-console
+  console.log(`API Listening on port ${PORT}`);
+});
 
 app.get('/', (req, res) => {
-    res.send('Welcome to NodeJs App using TypeScript and Nodemon');
-})
+  res.send('Welcome to NodeJs App using TypeScript and Nodemon');
+});
