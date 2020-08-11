@@ -1,11 +1,11 @@
 import { Router } from 'express';
-import productRoute from './productRoute';
+import ProductController from './controllers/ProductController';
 
 const router = Router();
 
-router.get('/', (req, res) => res.status(200).json('Welcome to NodeJs App using TypeScript and Nodemon'));
+router.get('/', (req, res) => res.json('Welcome to NodeJs App using TypeScript and Nodemon'));
 
-router.get('/products', productRoute.list);
-router.post('/products', productRoute.create);
+router.get('/products', ProductController.find);
+router.post('/products', ProductController.create);
 
 export default router;
