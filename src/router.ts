@@ -7,5 +7,6 @@ router.get('/', (req, res) => res.json('Welcome to NodeJs App using TypeScript a
 
 router.get('/products', ProductController.find);
 router.post('/products', ProductController.create);
+router.put('/products/:id', ProductController.update);
 
 export default router;
