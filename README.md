@@ -4,6 +4,12 @@ API Rest em Node.js e TypeScript.
 
 ## Desenvolvimento
 
+Suba o banco de dados MongoDB com o docker-compose:
+
+```
+docker-compose up -d
+```
+
 Instale as dependencias:
 
 ```
