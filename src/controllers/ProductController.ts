@@ -32,7 +32,20 @@ class ProductController {
       return res.json(product);
     }
 
-    return res.status(404).json(product);
+    return res.status(404).send();
+  }
+
+  public static async delete(req: Request, res: Response): Promise<Response> {
+    const { id } = req.params;
+    const product = await Product.findById(id);
+
+    if (product) {
+      await product.deleteOne();
+
+      return res.status(204).send();
+    }
+
+    return res.status(404).send();
   }
 }
 
