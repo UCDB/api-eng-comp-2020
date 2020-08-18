@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    volumes:
+      ['/private/var/services/mongodb:/data/db']
+    ports:
+      - 27017:27017
